@@ -1,0 +1,25 @@
+
+#map {
+	position: fixed;
+	z-index: 21;
+	right: 20px;
+	top: 20px;
+	border: 1px solid #999;
+	background: #FFF;
+	width: 100px;
+	height: 100px;
+	/*-webkit-transition: all 0.4s ease;*/
+}
+	#map #view {
+		border: 1px solid #F00;
+		background: none;
+		margin: -1px 0 0 -1px;
+		z-index: 22;
+		position: absolute;
+		/*-webkit-transition: all 0.4s ease;*/
+	}
+	#map div {
+		position: absolute;
+		background: #EAEAEA;
+		margin: 2%;
+	}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>jDraggable example</title>
+        <meta name="description" content="An example for jDraggable use">
+        <meta name="author" content="Fernando Rodriguez">
+        <link rel=stylesheet type="text/css" href="mini-map.css">                
+    </head>
+    <body>
+        <div id="myDiv">
+            <h3>Project A3</h3>
+            <textarea rows="10" cols="120" readonly="readonly" id="Section1" style="width:500px; resize:none; -webkit-user-select: none;" ></textarea>
+            <textarea rows="10" cols="120" readonly="readonly" id="Section2" style="width:500px;resize:none;-webkit-user-select: none;"  ></textarea>
+            <textarea rows="10" cols="120" readonly="readonly" id="Section3" style="width:500px;resize:none;-webkit-user-select: none;"></textarea>
+            <textarea rows="10" cols="120" readonly="readonly" id="Section4" style="width:500px;resize:none;-webkit-user-select: none;"></textarea>
+            <textarea rows="10" cols="120" readonly="readonly" id="Section5" style="width:500px;resize:none;-webkit-user-select: none;"></textarea>
+            <textarea rows="10" cols="120" readonly="readonly" id="Section6" style="width:500px;resize:none;-webkit-user-select: none;"></textarea>
+        </div>
+    </body>
+    <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+        <script src="jDraggable.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('body').draggable({
+                    preventDefault: false,
+                    mapLevel: 2
+                })
+            });
+        </script>
+</html>
