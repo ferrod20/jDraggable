@@ -30,8 +30,8 @@ function Map(el) {
     var mapMouseMove = function (e) {
         e.preventDefault();
         if (mouseClicked) {
-            var top = e.pageY - mapViewHeight; 
-            var left = e.pageX - mapViewWidth; 
+            var top = e.pageY - mapViewHeight;
+            var left = e.pageX - mapViewWidth;
             clickX = e.pageX;
             clickY = e.pageY;
 
@@ -40,7 +40,7 @@ function Map(el) {
 
             left = Math.max(0, left);
             left = Math.min(mapHeight - mapViewHeight, left);
-            
+
             var mapTop = (top * containerHeight) / mapHeight;
             var mapLeft = (left * containerWidth) / mapWidth;
             mapView.css("top", top);
@@ -48,7 +48,7 @@ function Map(el) {
             map.css("top", -mapTop);
             map.css("left", -mapLeft);
         }
-    }
+    };
 
     var mapMouseDown = function (e) {
         e.preventDefault();
@@ -56,11 +56,12 @@ function Map(el) {
         clickX = e.pageX;
         clickY = e.pageY;
         mapMouseMove(e);
-    }
+    };
 
     var mapMouseUp = function (e) {
         mouseClicked = false;
-    }
+    };
+    
     //create map
     //iterate through childs and create 1/20th scale divs in map
     var createMap = function () {
@@ -79,10 +80,10 @@ function Map(el) {
             dLevel--;
         }
 
-        drawChildren(map, children)
+        drawChildren(map, children);
 
         addMapEventsAndMeasures();
-    }
+    };
 
     var addMapEventsAndMeasures = function () {
         map
@@ -99,7 +100,8 @@ function Map(el) {
 
         mapHeight = map.height();
         mapWidth = map.width();        
-    }
+    };
+    
     var drawChildren = function (map, children) {
         //draw each child
         children.each(function (i) {
@@ -116,7 +118,8 @@ function Map(el) {
 
             mapIcon.appendTo(map);
         });
-    }
+    };
+    
     var show = function () {
         var $document = $(document);
         var $window = $(window);
@@ -130,7 +133,7 @@ function Map(el) {
         var mapViewWidth = ($window.width() / 20) + 10;
         var mapViewHeight = ($window.height() / 20) + 10;
         mapView.css({ 'width': mapViewWidth + 'px', 'height': mapViewHeight + 'px' });
-    }
+    };
 
     var onWindowResize = function () {
         el
@@ -165,12 +168,13 @@ function Map(el) {
 
 
 (function ($) {
-    $.fn.draggable = function (options) {    
+    $.fn.draggable = function (options) {
+        var self;
         var settings = $.extend({
                     dragSelector: '>:first',
                     acceptPropagatedEvent: true,
                     preventDefault: true,
-                    avoidSelector: null,
+                    avoidElements: null,
                     mapVisualization: true,
                     mapLevel: 1
                 }, options || {});
@@ -194,7 +198,7 @@ function Map(el) {
                 event.preventDefault();
                 return false;
             }
-
+            return true;
         };
         
         var mouseUpHandler = function (event) { // Stop scrolling
@@ -204,6 +208,7 @@ function Map(el) {
                 event.preventDefault();
                 return false;
             }
+            return true;
         };
 
         var mouseDownHandler = function (event) {
@@ -217,10 +222,10 @@ function Map(el) {
                 if (event.srcElement)
                     target = event.srcElement;
 
-            if (target.nodeType == 3) // defeat Safari bug
+            if (target && target.nodeType == 3) // defeat Safari bug
                 target = target.parentNode;
 
-            var avoidElement = $(target).closest(data.avoidSelector).length > 0;
+            var avoidElement = $(target).closest(data.avoidElements).length > 0;
             var acceptEvent = (data.acceptPropagatedEvent && !avoidElement) || event.target == this;
 
             if (event.which != 1 || !acceptEvent)
@@ -238,24 +243,38 @@ function Map(el) {
             }
             return result;
         };
+                        
+        var resetMouseIcon = function (event) {        
+
+        };
         
         // set up the initial events
         this.each(function () {
             // closure object data for each scrollable element
-            var $this = $(this);
+            self = $(this);
             var data = {
-                scrollable: $this,
+                scrollable: self,
                 acceptPropagatedEvent: settings.acceptPropagatedEvent,
                 preventDefault: settings.preventDefault,
-                avoidSelector: settings.avoidSelector
+                avoidElements: settings.avoidElements
             };
 
             // Set mouse initiating event on the desired descendant
-            $this
+            self
                 .find(settings.dragSelector)
-                .bind('mousedown', data, mouseDownHandler);
+                .bind('mousedown', data, mouseDownHandler)
+                .css('cursor', 'move');
+
+            if (settings.avoidElements)
+                self
+                    .find(settings.dragSelector)
+                    .find(settings.avoidElements)
+                    .css('cursor', 'default');
+
+            $(window).resize(resetMouseIcon);
+            
             if (settings.mapVisualization) {
-                var map = new Map($this);
+                var map = new Map(self);
                 map.setup(settings.mapLevel);
             }
         });
