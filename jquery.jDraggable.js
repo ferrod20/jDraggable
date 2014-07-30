@@ -1,5 +1,5 @@
-// https: //github.com/ferrod20/jDraggable
-/*
+/* https://github.com/ferrod20/jDraggable
+*
 * jDraggable Plugin
 * version: 0.1 (alpha)
 * Created by Fernando Rodriguez
@@ -168,7 +168,7 @@ function Map(el) {
 
 
 (function ($) {
-    $.fn.draggable = function (options) {
+    $.fn.dragToScroll = function (options) {
         var self;
         var settings = $.extend({
                     dragSelector: '>:first',
@@ -202,8 +202,8 @@ function Map(el) {
         };
         
         var mouseUpHandler = function (event) { // Stop scrolling
-            $.event.remove(document, "mousemove", mouseMoveHandler);
-            $.event.remove(document, "mouseup", mouseUpHandler);
+            $.event.remove(document, "mousemove.jDraggable", mouseMoveHandler);
+            $.event.remove(document, "mouseup.jDraggable", mouseUpHandler);
             if (event.data.preventDefault) {
                 event.preventDefault();
                 return false;
@@ -234,8 +234,8 @@ function Map(el) {
                 // Initial coordinates will be the last when dragging
                 data.lastCoord = { left: event.clientX, top: event.clientY };
 
-                $.event.add(document, "mouseup", mouseUpHandler, data);
-                $.event.add(document, "mousemove", mouseMoveHandler, data);
+                $.event.add(document, "mouseup.jDraggable", mouseUpHandler, data);
+                $.event.add(document, "mousemove.jDraggable", mouseMoveHandler, data);
                 if (data.preventDefault) {
                     event.preventDefault();
                     result = false;
@@ -262,7 +262,8 @@ function Map(el) {
             // Set mouse initiating event on the desired descendant
             self
                 .find(settings.dragSelector)
-                .bind('mousedown', data, mouseDownHandler)
+                .off('mousedown.jDraggable')
+                .on('mousedown.jDraggable', data, mouseDownHandler)
                 .css('cursor', 'move');
 
             if (settings.avoidElements)
