@@ -4,7 +4,7 @@
 * version: 0.1 (alpha)
 * Created by Fernando Rodriguez
 * 
-* Based on 2 excellent plugins:
+* Based on two great plugins:
 * dragscrollable: http://hitconsultants.com/dragscroll_scrollsync/scrollpane.html (Miqel Herrera)
 * minimap: https://github.com/samcroft/mini-map (Sam Croft)
 *
