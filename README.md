@@ -29,7 +29,7 @@ This causes the body element be able to drag using the mouse. Additionally a min
    $('body').draggable([options]);
 ```
 
-Where options can be cero or more of the followings:
+### Where options can be cero or more of the followings:
 
 `mapVisualization`: Shows minimap. Default set to **true**.
 
