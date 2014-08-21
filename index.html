@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="jDraggable : jQuery plugin that allows screen dragging using the mouse">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>jDraggable</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ferrod20/jDraggable">View on GitHub</a>
+
+          <h1 id="project_title">jDraggable</h1>
+          <h2 id="project_tagline">jQuery plugin that allows screen dragging using the mouse</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ferrod20/jDraggable/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ferrod20/jDraggable/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="jdraggable" class="anchor" href="#jdraggable"><span class="octicon octicon-link"></span></a>jDraggable</h1>
+
+<p>A draggable and map screen visualization jQuery plugin.</p>
+
+<h2>
+<a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How to Use?</h2>
+
+<p>jDraggable depends on jQuery. Include them both in your HTML code:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"jquery.js"</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"jDraggable.js"</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</pre></div>
+
+<h2>
+<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
+
+<div class="highlight highlight-javascript"><pre>   <span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">draggable</span><span class="p">({</span>
+                    <span class="nx">preventDefault</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                    <span class="nx">mapLevel</span><span class="o">:</span> <span class="mi">2</span>
+                <span class="p">});</span>
+</pre></div>
+
+<p>This causes the body element be able to drag using the mouse. Additionally a mini map showing full screen and highlighting the piece of the screen that is currently visualized will appears.</p>
+
+<h2>
+<a name="code" class="anchor" href="#code"><span class="octicon octicon-link"></span></a>Code</h2>
+
+<div class="highlight highlight-javascript"><pre>   <span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">draggable</span><span class="p">([</span><span class="nx">options</span><span class="p">]);</span>
+</pre></div>
+
+<h3>
+<a name="where-options-can-be-cero-or-more-of-the-followings" class="anchor" href="#where-options-can-be-cero-or-more-of-the-followings"><span class="octicon octicon-link"></span></a>Where options can be cero or more of the followings:</h3>
+
+<p><code>mapVisualization</code>: Shows minimap. Default set to <strong>true</strong>.</p>
+
+<p><code>mapLevel</code>: Sets the level of html inner elements rendered by the map. The more inner elements level is set, the better graphic precision obtained. Defult set to <strong>1</strong>.</p>
+
+<p><code>avoidElements</code>: Set here html elements for which drag feature will not be available. Use a <a href="http://api.jquery.com/Types/#Selector">jQuery selector</a>, <a href="http://api.jquery.com/Types/#jQuery">jQuery selection</a> or <a href="http://api.jquery.com/Types/#Element">jQuery element</a>.</p>
+
+<p><code>preventDefault</code>: If sets to true, the default action of the draggable element events will not be triggered. Default value is <strong>true</strong>.</p>
+
+<p><code>dragSelector</code>: A jQuery selector that identifies elements to apply drag feature inside the main element. Default value <strong>&gt;:first</strong>.</p>
+
+<h4>
+<a name="jdraggable-is-based-on-two-great-plugins" class="anchor" href="#jdraggable-is-based-on-two-great-plugins"><span class="octicon octicon-link"></span></a>jDraggable is based on two great plugins:</h4>
+
+<p><a href="http://hitconsultants.com/dragscroll_scrollsync/scrollpane.html">dragscrollable</a> by Miqel Herrera</p>
+
+<p><a href="https://github.com/samcroft/mini-map">minimap</a> by Sam Croft</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">jDraggable maintained by <a href="https://github.com/ferrod20">ferrod20</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
