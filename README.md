@@ -1,7 +1,9 @@
 jDraggable
 ==========
 
-A draggable and map screen visualization jQuery plugin.
+A draggable and map screen visualization jQuery plugin. 
+
+See http://ferrod20.github.io/jDraggable for more information.
 
 ## How to Use?
 
