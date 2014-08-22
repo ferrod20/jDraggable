@@ -12,12 +12,12 @@ See http://ferrod20.github.io/jDraggable for more information.
 ## Usage
 
 Include jQuery.
-```javascript
-<script src="jquery.js" type="text/javascript" ></script>
+```html
+<script src="jquery.js"></script>
 ```
 Include jDraggable. 
-```javascript
-<script src="jDraggable.js" type="text/javascript" ></script>
+```html
+<script src="jDraggable.js" ></script>
 ```
 Call the plugin.
 ```javascript
