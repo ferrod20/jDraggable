@@ -17,7 +17,7 @@ Include jQuery.
 ```
 Include jDraggable. 
 ```html
-<script src="jDraggable.js" ></script>
+<script src="jDraggable.js"></script>
 ```
 Call the plugin.
 ```javascript
