@@ -11,20 +11,13 @@ See http://ferrod20.github.io/jDraggable for more information.
 
 ## Usage
 
-1. Include jQuery.
-
-```javascript
+1. Include jQuery. ```javascript
 <script src="jquery.js" type="text/javascript" ></script>
 ```
-
-2. Include jDraggable.
-
-```javascript
+2. Include jDraggable. ```javascript
 <script src="jDraggable.js" type="text/javascript" ></script>
 ```
-
-3. Call the plugin
-```javascript
+3. Call the plugin ```javascript
 $("#element").jDraggable({
     propertyName1: "a custom value"
 });
