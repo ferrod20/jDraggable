@@ -49,7 +49,7 @@ jDraggable accepts several options to customize its behaviour:
    $('body').draggable([options]);
 ```
 
-### Where options can be cero or more of the followings:
+Where options can be cero or more of the followings:
 
 * `mapVisualization`: Shows minimap. Default set to `true`.
 
