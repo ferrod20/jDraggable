@@ -11,13 +11,16 @@ See http://ferrod20.github.io/jDraggable for more information.
 
 ## Usage
 
-1. Include jQuery. ```javascript
+1. Include jQuery. 
+```javascript
 <script src="jquery.js" type="text/javascript" ></script>
 ```
-2. Include jDraggable. ```javascript
+2. Include jDraggable. 
+```javascript
 <script src="jDraggable.js" type="text/javascript" ></script>
 ```
-3. Call the plugin ```javascript
+3. Call the plugin 
+```javascript
 $("#element").jDraggable({
     propertyName1: "a custom value"
 });
@@ -48,9 +51,9 @@ jDraggable accepts several options to customize its behaviour:
 
 ### Where options can be cero or more of the followings:
 
-* `mapVisualization`: Shows minimap. Default set to **true**.
+* **mapVisualization**: Shows minimap. Default set to **true**.
 
-* `mapLevel`: Sets the level of html inner elements rendered by the map. The more inner elements level is set, the better graphic precision obtained. Defult set to **1**.
+* *mapLevel*: Sets the level of html inner elements rendered by the map. The more inner elements level is set, the better graphic precision obtained. Defult set to **1**.
 
 * `avoidElements`: Set here html elements for which drag feature will not be available. Use a [jQuery selector](http://api.jquery.com/Types/#Selector), [jQuery selection](http://api.jquery.com/Types/#jQuery) or [jQuery element](http://api.jquery.com/Types/#Element).
 
