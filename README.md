@@ -63,6 +63,6 @@ jDraggable accepts several options to customize its behaviour:
 
 #### jDraggable is based on two great plugins:
 
-[dragscrollable](http://hitconsultants.com/dragscroll_scrollsync/scrollpane.html) by Miqel Herrera
+* [dragscrollable](http://hitconsultants.com/dragscroll_scrollsync/scrollpane.html) by Miqel Herrera
 
-[minimap](https://github.com/samcroft/mini-map) by Sam Croft
+* [minimap](https://github.com/samcroft/mini-map) by Sam Croft
