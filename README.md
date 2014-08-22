@@ -5,16 +5,35 @@ A draggable and map screen visualization jQuery plugin.
 
 See http://ferrod20.github.io/jDraggable for more information.
 
-## How to Use?
+## Requirements
 
-jDraggable depends on jQuery. Include them both in your HTML code:
+* jQuery
+
+## Usage
+
+1. Include jQuery.
 
 ```javascript
-<script src="jquery.js" type="text/javascript"></script>
-<script src="jDraggable.js" type="text/javascript"></script>
+<script src="jquery.js" type="text/javascript" ></script>
+```
+
+2. Include jDraggable.
+
+```javascript
+<script src="jDraggable.js" type="text/javascript" ></script>
+```
+
+3. Call the plugin
+```javascript
+$("#element").jDraggable({
+    propertyName1: "a custom value"
+});
 ```
 
 ## Example
+
+The following example shows how to add drag by mouse ability to body element.
+
 
 ```javascript
    $('body').draggable({
@@ -23,9 +42,12 @@ jDraggable depends on jQuery. Include them both in your HTML code:
                 });
 ```
 
-This causes the body element be able to drag using the mouse. Additionally a mini map showing full screen and highlighting the piece of the screen that is currently visualized will appears.
+This code causes the ability of body element to be dragged using the mouse. Additionally a mini map showing full screen and highlighting the piece of the screen that is currently visualized will appears.
 
-## Code
+## Options
+
+jDraggable accepts several options to customize its behaviour:
+
 
 ```javascript
    $('body').draggable([options]);
@@ -33,15 +55,15 @@ This causes the body element be able to drag using the mouse. Additionally a min
 
 ### Where options can be cero or more of the followings:
 
-`mapVisualization`: Shows minimap. Default set to **true**.
+* `mapVisualization`: Shows minimap. Default set to **true**.
 
-`mapLevel`: Sets the level of html inner elements rendered by the map. The more inner elements level is set, the better graphic precision obtained. Defult set to **1**.
+* `mapLevel`: Sets the level of html inner elements rendered by the map. The more inner elements level is set, the better graphic precision obtained. Defult set to **1**.
 
-`avoidElements`: Set here html elements for which drag feature will not be available. Use a [jQuery selector](http://api.jquery.com/Types/#Selector), [jQuery selection](http://api.jquery.com/Types/#jQuery) or [jQuery element](http://api.jquery.com/Types/#Element).
+* `avoidElements`: Set here html elements for which drag feature will not be available. Use a [jQuery selector](http://api.jquery.com/Types/#Selector), [jQuery selection](http://api.jquery.com/Types/#jQuery) or [jQuery element](http://api.jquery.com/Types/#Element).
 
-`preventDefault`: If sets to true, the default action of the draggable element events will not be triggered. Default value is **true**.
+* `preventDefault`: If sets to true, the default action of the draggable element events will not be triggered. Default value is **true**.
 
-`dragSelector`: A jQuery selector that identifies elements to apply drag feature inside the main element. Default value **>:first**.
+* `dragSelector`: A jQuery selector that identifies elements to apply drag feature inside the main element. Default value **>:first**.
 
 #### jDraggable is based on two great plugins:
 
