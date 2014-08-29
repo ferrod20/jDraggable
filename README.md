@@ -66,3 +66,7 @@ Where options can be cero or more of the followings:
 * [dragscrollable](http://hitconsultants.com/dragscroll_scrollsync/scrollpane.html) by Miqel Herrera
 
 * [minimap](https://github.com/samcroft/mini-map) by Sam Croft
+
+## License
+
+jDraggable is released under the [MIT License](http://opensource.org/licenses/MIT).
