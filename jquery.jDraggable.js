@@ -9,7 +9,7 @@
 * minimap: https://github.com/samcroft/mini-map (Sam Croft)
 *
 */
-
+ 
 function Map(el) {
     var isOpen;
     var map;
